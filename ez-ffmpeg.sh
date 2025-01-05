@@ -6,7 +6,7 @@ if ! [ -z "$1" ]; then
 fi
 
 if  [ -z "$extension" ]; then
-    echo "No"
+    echo "ERROR: No file extension"
     exit 1
 fi
 
