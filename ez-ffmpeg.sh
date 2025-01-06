@@ -15,4 +15,4 @@ if  [ -z "$extension" ]; then
     exit 1
 fi
 
-echo  'process completed : file saved at' pwd
+echo  "process completed : file saved at ${pwd}"
