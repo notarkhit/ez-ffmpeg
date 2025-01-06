@@ -12,9 +12,3 @@ cd ez-ffmpeg/
 ./ez-ffmpeg.sh path/to/video
 
 ```
-
-### TODO:
-
-Add features:
-- [x] convert to webp
-- [ ] add framerate option
