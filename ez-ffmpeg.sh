@@ -5,6 +5,7 @@ if ! [ -z "$1" ]; then
     extension=$(echo "$1" | awk -F '.' '{print $2}')
 	outputFile=$filename.webp
 	echo $outputFilename
+	ffmpeg -i $filename.$extension -c:v libwebp -vf "fps=10,scale=1920:-1" -lossless 0 -q:v 80 $outputFile
 fi
 
 if  [ -z "$extension" ]; then
