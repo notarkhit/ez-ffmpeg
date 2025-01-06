@@ -11,9 +11,17 @@ if  [ -z "$extension" ]; then
     exit 1
 fi
 
+outputFile=$filename.webp
+echo $outputFilename
+ffmpeg -i $filename.$extension -c:v libwebp -vf "fps=10,scale=1920:-1" -lossless 0 -q:v 80 $outputFile
 else
     echo "ERROR: No arguements ! "
 fi
 
-echo "completed"
+if  [ -z "$extension" ]; then
+    echo "ERROR: No file extension"
+    exit 1
+fi
 
+echo  "process completed, file saved at :"
+pwd
