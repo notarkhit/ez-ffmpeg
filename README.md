@@ -7,8 +7,12 @@ A shell script to make [ffmpeg](https://ffmpeg.org/) simpler to use.
 
 ```bash
 
+sudo pacman -S ffmpeg
+
 git clone https://github.com/notarkhit/ez-ffmpeg.git
+
 cd ez-ffmpeg/
+
 ./ez-ffmpeg.sh path/to/video
 
 ```
