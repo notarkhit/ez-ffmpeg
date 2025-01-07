@@ -1,7 +1,7 @@
 # ez-ffmpeg
 A shell script to make [ffmpeg](https://ffmpeg.org/) simpler to use.
 
-> It can be used to connvert videos to .webp format (lossless)
+> It can be used to convert videos to .webp format (lossless)
 
 ### Usage:
 
