@@ -11,7 +11,7 @@ function main (){
         extension=${base_filename##*.}
         outputFile=$filename.webp
 
-        if ! cat .formats | awk 'NR >= 5 {print $2}' | grep -qx "$extension" ; then
+        if ! cat ~/repos/ez-ffmpeg/.formats | awk 'NR >= 5 {print $2}' | grep -qx "$extension" ; then
             echo -e "\033[38;5;1mFILE FORMAT NOT SUPPORTED.\033[0m"
             exit 1
         fi
