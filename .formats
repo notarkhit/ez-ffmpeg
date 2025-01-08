@@ -1,7 +1,7 @@
-#File-formats:
-#D.=Demuxing-supported
-#.E=Muxing-supported
-#--
+ File-formats:
+ D.=Demuxing-supported
+ .E=Muxing-supported
+ --
  D  3dostr          3DO STR
   E 3g2             3GP2 (3GPP2 file format)
   E 3gp             3GP (3GPP file format)
