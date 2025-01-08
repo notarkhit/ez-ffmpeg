@@ -5,7 +5,7 @@ formats=(
 )
 
 function ffmpeg_function(){
-    ffmpeg -i $filename.$extension -c:v libwebp -vf "fps=10,scale=1920:-1" -lossless 0 -q:v 80 $outputFile
+    ffmpeg -i $filename.$extension -c:v libwebp -vf "fps=30,scale=1920:-1" -lossless 0 -q:v 80 $outputFile
 }
 
 function main (){
