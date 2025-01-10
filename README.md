@@ -8,6 +8,7 @@ A shell script to make [ffmpeg](https://ffmpeg.org/) simpler to use.
 ```bash
 
 sudo pacman -S ffmpeg
+# use the package manager your distribution provides to install ffmpeg.
 
 git clone https://github.com/notarkhit/ez-ffmpeg.git
 
