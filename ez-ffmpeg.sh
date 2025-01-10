@@ -5,7 +5,8 @@ formats=(
 )
 
 function ffmpeg_function(){
-    ffmpeg -i $filename.$extension -c:v libwebp -vf "fps=30,scale=1920:-1" -lossless 0 -q:v 80 $outputFile
+    local fps=${1:-"24"}
+    ffmpeg -i $filename.$extension -c:v libwebp -vf "fps=${fps},scale=1920:-1" -lossless 0 -q:v 80 $outputFile
 }
 
 function main (){
@@ -14,18 +15,20 @@ function main (){
         filename=${base_filename%.*}
         extension=${base_filename##*.}
         extention_choice=$(printf "%s\n" ${formats[@]} | fzf --wrap --cycle --ansi --reverse --header="Choice an extension:")
-        echo $extention_choice
 
         if ! [ -z $extention_choice ]; then
             outputFile="${filename}.${extention_choice}"
-            echo $outputFile
             if ! printf "%s\n" ${formats[@]} | grep -qx "$extension" ; then
                 echo -e "\033[38;5;1mFILE FORMAT NOT SUPPORTED.\033[0m"
                 exit 1
             fi
 
             # Calling the ffmpeg function here -
-            ffmpeg_function
+            if [[ $2 =~ ^[0-9]+$ ]]; then
+                ffmpeg_function $2
+            else
+                ffmpeg_function
+            fi
 
             echo -e "\033[38;5;2mSaved the output file at: $(pwd)/$outputFile\033[0m"
         fi
@@ -34,6 +37,6 @@ function main (){
     fi
 }
 
-main $1
+main $1 $2
 
 # Have fun now 😉.
